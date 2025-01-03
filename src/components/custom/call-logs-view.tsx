@@ -326,7 +326,7 @@ const isDateInRange = (dateStr: string) => {
         Sort
       </Button>
     </DropdownMenuTrigger>
-    <DropdownMenuContent className="w-[300px]">
+<DropdownMenuContent className="w-[300px]">
   <DropdownMenuRadioGroup value={sortOption} onValueChange={setSortOption}>
     <DropdownMenuRadioItem value="standard">Standard sorting</DropdownMenuRadioItem>
     <DropdownMenuRadioItem value="a-z">Users (A-Z)</DropdownMenuRadioItem>
@@ -587,11 +587,8 @@ const isDateInRange = (dateStr: string) => {
           </div>
         </div>
         </CardContent>
-        <Dialog open={isCalendarOpen} onOpenChange={setIsCalendarOpen}>
-  <DialogContent className="sm:max-w-[600px] p-0 overflow-hidden border-none m-0 [&>div]:p-0 [&>div]:m-0">
-    <DialogHeader className="p-0 m-0">
-      <DialogTitle className="sr-only">Select Date Range</DialogTitle>
-    </DialogHeader>
+<Dialog open={isCalendarOpen} onOpenChange={setIsCalendarOpen}>
+  <DialogContent className="!p-0 !m-0 border bg-white overflow-hidden max-w-[600px]">
     <Calendar onSelectRange={handleSelectDateRange} />
   </DialogContent>
 </Dialog>
