@@ -326,7 +326,7 @@ const isDateInRange = (dateStr: string) => {
         Sort
       </Button>
     </DropdownMenuTrigger>
-<DropdownMenuContent className="w-[300px]">
+    <DropdownMenuContent className="w-[300px]">
   <DropdownMenuRadioGroup value={sortOption} onValueChange={setSortOption}>
     <DropdownMenuRadioItem value="standard">Standard sorting</DropdownMenuRadioItem>
     <DropdownMenuRadioItem value="a-z">Users (A-Z)</DropdownMenuRadioItem>
