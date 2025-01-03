@@ -117,31 +117,12 @@ export function Calendar({ onSelectRange }: CalendarProps) {
   return (
     <div className="w-full relative">
       <div className="p-2">
-        <div className="absolute top-0 right-0 z-10">
-          <Button
-            variant="ghost"
-            size="sm"
-            onClick={() => {
-              setStartDate(null);
-              setEndDate(null);
-              onSelectRange(null, null);
-            }}
-            className="h-8 w-8 p-0 hover:bg-transparent"
-          >
-            <X className="h-4 w-4" />
-          </Button>
-        </div>
-        <Button
-          variant="ghost"
-          className="w-full text-base font-semibold mb-2 hover:bg-gray-100"
-          onClick={() => {
-            setStartDate(null);
-            setEndDate(null);
-            onSelectRange(null, null);
-          }}
-        >
-          All time
-        </Button>
+      <Button
+  variant="ghost"
+  className="w-full text-base font-semibold mb-2 hover:bg-gray-100"
+>
+  All time
+</Button>
         <div className="grid grid-cols-2 gap-2">
           {[0, 1].map((offset) => {
             const displayDate = new Date(currentDate.getFullYear(), currentDate.getMonth() + offset, 1)
