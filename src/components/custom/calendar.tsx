@@ -1,7 +1,7 @@
 "use client"
 
 import * as React from "react"
-import { ChevronLeft, ChevronRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight, X } from 'lucide-react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent } from "@/components/ui/card"
 
@@ -18,6 +18,7 @@ export function Calendar({ onSelectRange }: CalendarProps) {
   const [currentDate, setCurrentDate] = React.useState(new Date())
   const [startDate, setStartDate] = React.useState<Date | null>(null)
   const [endDate, setEndDate] = React.useState<Date | null>(null)
+  const [hoverDate, setHoverDate] = React.useState<Date | null>(null)
 
   const goToPreviousMonth = () => {
     setCurrentDate(new Date(currentDate.getFullYear(), currentDate.getMonth() - 1, 1))
@@ -53,6 +54,18 @@ export function Calendar({ onSelectRange }: CalendarProps) {
     return date.getTime() === startDate.getTime() || date.getTime() === endDate.getTime();
   };
 
+  const isDateInHoverRange = (date: Date) => {
+    if (!startDate || !hoverDate || endDate) return false;
+    
+    const isAfterStart = date.getTime() >= startDate.getTime();
+    const isBeforeHover = date.getTime() <= hoverDate.getTime();
+    const isBeforeStart = date.getTime() <= startDate.getTime();
+    const isAfterHover = date.getTime() >= hoverDate.getTime();
+    
+    return (hoverDate >= startDate && isAfterStart && isBeforeHover) ||
+           (hoverDate < startDate && isBeforeStart && isAfterHover);
+  };
+
   const renderCalendar = (year: number, month: number) => {
     const firstDay = new Date(year, month, 1)
     const lastDay = new Date(year, month + 1, 0)
@@ -63,18 +76,26 @@ export function Calendar({ onSelectRange }: CalendarProps) {
     for (let i = 0; i < startingDay; i++) {
       days.push(<div key={`empty-${i}`} className="text-center py-2"></div>)
     }
+
     for (let i = 1; i <= daysInMonth; i++) {
       const currentDateIter = new Date(year, month, i)
       const isBeforeToday = currentDateIter < new Date(new Date().setHours(0, 0, 0, 0))
+      const isActiveDate = isStartOrEndDate(currentDateIter)
+      const isHoveredRange = isDateInHoverRange(currentDateIter)
+      const isDateRange = isDateInRange(currentDateIter)
+      const isHovered = hoverDate?.getTime() === currentDateIter.getTime() && startDate && !endDate
       
       days.push(
         <div 
           key={i} 
-          className={`text-center py-1.5 text-sm cursor-pointer hover:bg-[#5b06be]/10 rounded-full transition-colors
-            ${isStartOrEndDate(currentDateIter) ? 'bg-[#5b06be] text-white hover:bg-[#5b06be]' : ''}
-            ${isDateInRange(currentDateIter) ? 'bg-[#5b06be]/20' : ''}
+          className={`text-center py-1.5 text-sm cursor-pointer transition-colors rounded-full
+            ${isActiveDate ? 'bg-[#5b06be] text-white hover:bg-[#5b06be]' : 'hover:bg-[#5b06be]/10'}
+            ${(isDateRange || isHoveredRange) ? 'bg-[#5b06be]/20' : ''}
+            ${isHovered ? 'bg-[#5b06be] text-white' : ''}
             ${isBeforeToday ? 'text-gray-400' : ''}`}
           onClick={() => handleDateClick(currentDateIter)}
+          onMouseEnter={() => !endDate && setHoverDate(currentDateIter)}
+          onMouseLeave={() => setHoverDate(null)}
         >
           {i}
         </div>
@@ -94,8 +115,22 @@ export function Calendar({ onSelectRange }: CalendarProps) {
   };
 
   return (
-    <Card className="w-full max-w-2xl mx-auto p-0 m-0">
-      <CardContent className="p-2 pt-0">
+<div className="w-full relative">
+  <div className="p-2">
+        <div className="absolute top-0 right-0 z-10">
+          <Button
+            variant="ghost"
+            size="sm"
+            onClick={() => {
+              setStartDate(null);
+              setEndDate(null);
+              onSelectRange(null, null);
+            }}
+            className="h-8 w-8 p-0 hover:bg-transparent"
+          >
+            <X className="h-4 w-4" />
+          </Button>
+        </div>
         <Button
           variant="ghost"
           className="w-full text-base font-semibold mb-2 hover:bg-gray-100"
