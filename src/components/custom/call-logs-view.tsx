@@ -326,36 +326,35 @@ const isDateInRange = (dateStr: string) => {
         Sort
       </Button>
     </DropdownMenuTrigger>
-                <DropdownMenuContent className="w-[300px]">
-                  <DropdownMenuRadioGroup value={sortOption} onValueChange={setSortOption}>
-                    <DropdownMenuRadioItem value="standard">Standard sorting</DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem value="a-z">Users (A-Z)</DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem value="z-a">Users (Z-A)</DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem value="date-new">Date (newest first)</DropdownMenuRadioItem>
-                    <DropdownMenuRadioItem value="date-old">Date (oldest first)</DropdownMenuRadioItem>
-                  </DropdownMenuRadioGroup>
-                  <DropdownMenuSeparator />
-                  <div className="px-2 py-4">
-                    <div className="flex justify-between items-center mb-2">
-                      <span className="text-sm font-medium">Overall Performance Range:</span>
-                      <span className="text-sm font-medium text-[#5b06be]">{performanceRange[0]} - {performanceRange[1]}</span>
-                    </div>
-                    <Slider
-  min={0}
-  max={100}
-  step={1}
-  defaultValue={[0, 100]}  // This ensures both handles are visible initially
-  value={[performanceRange[0], performanceRange[1]]}
-  onValueChange={(newValue) => {
-    if (Array.isArray(newValue) && newValue.length === 2) {
-      setPerformanceRange([newValue[0], newValue[1]]);
-    }
-  }}
-  className="w-full [&_[role=slider]]:bg-white [&_[role=slider]]:border-2 [&_[role=slider]]:border-[#5b06be] [&_[role=slider]]:w-4 [&_[role=slider]]:h-4 [&_[role=slider]]:rounded-full [&_[role=slider]]:z-10 [&_[role=track]]:bg-[#f8b922] [&_[role=track]]:opacity-100 [&_[role=range]]:bg-[#5b06be] [&_[role=track.background]]:bg-[#f8b922]"
-  minStepsBetweenThumbs={1}
-/>
-                  </div>
-                </DropdownMenuContent>
+<DropdownMenuContent className="w-[300px]">
+  <DropdownMenuRadioGroup value={sortOption} onValueChange={setSortOption}>
+    <DropdownMenuRadioItem value="standard">Standard sorting</DropdownMenuRadioItem>
+    <DropdownMenuRadioItem value="a-z">Users (A-Z)</DropdownMenuRadioItem>
+    <DropdownMenuRadioItem value="z-a">Users (Z-A)</DropdownMenuRadioItem>
+    <DropdownMenuRadioItem value="date-new">Date (newest first)</DropdownMenuRadioItem>
+    <DropdownMenuRadioItem value="date-old">Date (oldest first)</DropdownMenuRadioItem>
+  </DropdownMenuRadioGroup>
+  <DropdownMenuSeparator />
+  <div className="px-2 py-4">
+    <div className="flex justify-between items-center mb-2">
+      <span className="text-sm font-medium">Overall Performance Range:</span>
+      <span className="text-sm font-medium text-[#5b06be]">{performanceRange[0]} - {performanceRange[1]}</span>
+    </div>
+    <Slider
+      min={0}
+      max={100}
+      step={1}
+      value={[performanceRange[0], performanceRange[1]]}
+      onValueChange={(newValue) => {
+        if (Array.isArray(newValue) && newValue.length === 2) {
+          setPerformanceRange([newValue[0], newValue[1]]);
+        }
+      }}
+      className="w-full [&_[role=slider]]:bg-white [&_[role=slider]]:border-2 [&_[role=slider]]:border-[#5b06be] [&_[role=slider]]:w-4 [&_[role=slider]]:h-4 [&_[role=slider]]:rounded-full [&_[role=slider]]:z-10 [&_[role=track]]:bg-[#f8b922] [&_[role=track]]:opacity-100 [&_[role=range]]:bg-[#5b06be] [&_[role=track.background]]:bg-[#f8b922]"
+      minStepsBetweenThumbs={1}
+    />
+  </div>
+</DropdownMenuContent>
               </DropdownMenu>
               <div className="relative max-w-sm">
                 <Image
@@ -477,7 +476,7 @@ const isDateInRange = (dateStr: string) => {
                                 />
                               </Button>
                             </DialogTrigger>
-                          <DialogContent className="max-w-5xl h-[53vh] p-6 overflow-hidden">
+                          <DialogContent className="max-w-[825px] !w-[825px] !h-[525px] p-6 overflow-hidden">
                           <DialogHeader className="pb-4">
                             <div className="flex items-center justify-between w-full py-2 border-b">
                               <div className="flex items-center gap-4">

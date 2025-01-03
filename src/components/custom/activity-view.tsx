@@ -425,29 +425,34 @@ function ActivityView({ data }: ActivityViewProps) {
                 <span className="text-xs">Sort</span>
               </Button>
             </DropdownMenuTrigger>
-            <DropdownMenuContent className="w-[300px] p-4">
-              <DropdownMenuRadioGroup value={sortOption} onValueChange={setSortOption}>
-                <DropdownMenuRadioItem value="standard" className="py-3 text-base font-normal">Standard sorting</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="a-z" className="py-3 text-base font-normal">Users (A-Z)</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="z-a" className="py-3 text-base font-normal">Users (Z-A)</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="date-new" className="py-3 text-base font-normal">Date (newest first)</DropdownMenuRadioItem>
-                <DropdownMenuRadioItem value="date-old" className="py-3 text-base font-normal">Date (oldest first)</DropdownMenuRadioItem>
-              </DropdownMenuRadioGroup>
-              <div className="pt-6 pb-4">
-                <div className="flex justify-between items-center mb-4">
-                  <span className="text-base font-medium">Overall Performance Range:</span>
-                  <span className="text-base font-medium text-[#5b06be]">{performanceRange[0]} - {performanceRange[1]}</span>
-                </div>
-                <Slider
-                  min={0}
-                  max={100}
-                  step={1}
-                  value={[performanceRange[0], performanceRange[1]]}
-                  onValueChange={(newValue) => setPerformanceRange(newValue as [number, number])}
-                  className="w-full [&_[role=slider]]:bg-white [&_[role=slider]]:border-2 [&_[role=slider]]:border-[#5b06be] [&_[role=slider]]:w-4 [&_[role=slider]]:h-4 [&_[role=slider]]:rounded-full [&_[role=track]]:bg-black [&_[role=track]]:h-1 [&_[role=range]]:bg-black [&_[role=slider]]:shadow-md [&_[role=slider]]:hover:scale-110 [&_[role=slider]]:transition-transform"
-                />
-              </div>
-            </DropdownMenuContent>
+<DropdownMenuContent className="w-[300px] p-4">
+  <DropdownMenuRadioGroup value={sortOption} onValueChange={setSortOption}>
+    <DropdownMenuRadioItem value="standard" className="py-3 text-base font-normal">Standard sorting</DropdownMenuRadioItem>
+    <DropdownMenuRadioItem value="a-z" className="py-3 text-base font-normal">Users (A-Z)</DropdownMenuRadioItem>
+    <DropdownMenuRadioItem value="z-a" className="py-3 text-base font-normal">Users (Z-A)</DropdownMenuRadioItem>
+    <DropdownMenuRadioItem value="date-new" className="py-3 text-base font-normal">Date (newest first)</DropdownMenuRadioItem>
+    <DropdownMenuRadioItem value="date-old" className="py-3 text-base font-normal">Date (oldest first)</DropdownMenuRadioItem>
+  </DropdownMenuRadioGroup>
+  <div className="pt-6 pb-4">
+    <div className="flex justify-between items-center mb-4">
+      <span className="text-base font-medium">Overall Performance Range:</span>
+      <span className="text-base font-medium text-[#5b06be]">{performanceRange[0]} - {performanceRange[1]}</span>
+    </div>
+    <Slider
+      min={0}
+      max={100}
+      step={1}
+      value={[performanceRange[0], performanceRange[1]]}
+      onValueChange={(newValue) => {
+        if (Array.isArray(newValue) && newValue.length === 2) {
+          setPerformanceRange([newValue[0], newValue[1]]);
+        }
+      }}
+      className="w-full [&_[role=slider]]:bg-white [&_[role=slider]]:border-2 [&_[role=slider]]:border-[#5b06be] [&_[role=slider]]:w-4 [&_[role=slider]]:h-4 [&_[role=slider]]:rounded-full [&_[role=slider]]:z-10 [&_[role=track]]:bg-[#f8b922] [&_[role=track]]:opacity-100 [&_[role=range]]:bg-[#5b06be] [&_[role=track.background]]:bg-[#f8b922]"
+      minStepsBetweenThumbs={1}
+    />
+  </div>
+</DropdownMenuContent>
           </DropdownMenu>
           <div className="relative max-w-xs">
             <Image
