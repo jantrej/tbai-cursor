@@ -771,13 +771,13 @@ function AudioPlayer({ audioUrl }: { audioUrl: string }) {
         -10s
       </Button>
       <Button
-        variant="ghost"
-        size="sm"
-        onClick={togglePlayPause}
-        className="rounded-full bg-[#5b06be] text-white hover:bg-[#7016e0] hover:text-white transition-all shadow-md shadow-black/10 w-8 h-8 p-0 flex items-center justify-center"
-      >
-        {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
-      </Button>
+  variant="ghost"
+  size="icon"
+  onClick={togglePlayPause}
+  className="rounded-full bg-[#5b06be] text-white hover:bg-[#7016e0] hover:text-white transition-all shadow-md shadow-black/10 w-8 h-8 p-0 flex items-center justify-center aspect-square"
+>
+  {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+</Button>
       <div
   ref={progressBarRef}
   className="relative w-full max-w-[150px] h-1.5 bg-gray-200 roundedfull cursor-pointer"
