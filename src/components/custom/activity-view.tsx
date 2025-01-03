@@ -338,7 +338,7 @@ function PerformanceDialog({ data }: { data: ActivityData }) {
 
 function ActivityView({ data }: ActivityViewProps) {
   const [searchQuery, setSearchQuery] = useState("")
-  const [performanceRange, setPerformanceRange] = useState([0, 100]);
+  const [performanceRange, setPerformanceRange] = useState<[number, number]>([0, 100]);
   const [sortOption, setSortOption] = useState("standard");
   const [isNoteDialogOpen, setIsNoteDialogOpen] = useState(false);
   const [currentNote, setCurrentNote] = useState("");
