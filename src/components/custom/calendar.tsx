@@ -115,8 +115,8 @@ export function Calendar({ onSelectRange }: CalendarProps) {
   };
 
   return (
-<div className="w-full relative">
-  <div className="p-2">
+    <div className="w-full relative">
+      <div className="p-2">
         <div className="absolute top-0 right-0 z-10">
           <Button
             variant="ghost"
@@ -203,7 +203,7 @@ export function Calendar({ onSelectRange }: CalendarProps) {
             Last 90 Days
           </Button>
         </div>
-      </CardContent>
-    </Card>
+      </div>
+    </div>
   )
 }
