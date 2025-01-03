@@ -120,6 +120,11 @@ export function Calendar({ onSelectRange }: CalendarProps) {
       <Button
   variant="ghost"
   className="w-full text-base font-semibold mb-2 hover:bg-gray-100"
+  onClick={() => {
+    setStartDate(null);
+    setEndDate(null);
+    onSelectRange(null, null);
+  }}
 >
   All time
 </Button>
