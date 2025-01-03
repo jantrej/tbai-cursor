@@ -377,29 +377,29 @@ const isDateInRange = (dateStr: string) => {
           <div className="w-full">
             <table className="w-full table-fixed">
               <thead className="sticky top-0 z-10">
-                <tr className="bg-[#f8b922]">
-                  <th className="w-20 px-2 py-4">
-                    <div className="flex justify-start items-center text-sm font-medium text-white pl-2">
-                      Date
-                    </div>
-                  </th>
-                  <th className="w-48 px-2 py-4">
-                    <div className="flex items-center justify-center text-sm font-medium text-white">
-                      User
-                    </div>
-                  </th>
-                  <th className="w-44 px-2 py-4 text-center text-sm font-medium text-white">
-                    Avatar
-                  </th>
-                  <th className="w-52 px-2 py-4 text-center">
-                    <span className="text-sm font-medium text-white">
-                      Call Performance
-                    </span>
-                  </th>
-                  <th className="w-[360px] px-2 py-4 text-center text-sm font-medium text-white">
-                    Call Recording
-                  </th>
-                </tr>
+              <tr className="bg-[#f8b922]">
+  <th className="w-[10%] px-2 py-4">
+    <div className="flex justify-start items-center text-sm font-medium text-white pl-2">
+      Date
+    </div>
+  </th>
+  <th className="w-[20%] px-2 py-4">
+    <div className="flex items-center justify-center text-sm font-medium text-white">
+      User
+    </div>
+  </th>
+  <th className="w-[20%] px-2 py-4 text-center text-sm font-medium text-white">
+    Avatar
+  </th>
+  <th className="w-[20%] px-2 py-4 text-center">
+    <span className="text-sm font-medium text-white">
+      Call Performance
+    </span>
+  </th>
+  <th className="w-[30%] px-2 py-4 text-center text-sm font-medium text-white">
+    Call Recording
+  </th>
+</tr>
               </thead>
             </table>
           
@@ -779,10 +779,10 @@ function AudioPlayer({ audioUrl }: { audioUrl: string }) {
         {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
       </Button>
       <div
-        ref={progressBarRef}
-        className="relative w-44 h-1.5 bg-gray-200 roundedfull cursor-pointer"
-        onClick={handleProgressBarClick}
-      >
+  ref={progressBarRef}
+  className="relative w-full max-w-[150px] h-1.5 bg-gray-200 roundedfull cursor-pointer"
+  onClick={handleProgressBarClick}
+>
         <div
           className="absolute h-full bg-[#5b06be] rounded-full"
           style={{ width: `${(currentTime / duration) * 100}%` }}
