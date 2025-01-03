@@ -880,11 +880,11 @@ function AreasOfImprovement({ currentIndex }: { currentIndex: number }) {
   {isEditing ? (
     <textarea
       defaultValue={currentArea.description}
-      className="w-full h-[40px] text-sm text-gray-600 bg-transparent border rounded-md p-2 focus:outline-none focus:border-purple-800 overflow-y-auto"
+      className="w-full h-[40px] text-sm text-gray-600 bg-transparent border rounded-md p-2 focus:outline-none focus:border-purple-800 overflow-y-auto overflow-x-hidden whitespace-normal resize-none"
       onBlur={(e) => handleSave(currentArea.area, e.target.value)}
     />
   ) : (
-    <p className="text-sm text-gray-600 pr-2 max-h-[40px] overflow-y-auto">{currentArea.description}</p>
+    <p className="text-sm text-gray-600 pr-2 max-h-[40px] overflow-y-auto overflow-x-hidden break-words whitespace-normal">{currentArea.description}</p>
   )}
 </div>
     </div>
