@@ -876,17 +876,17 @@ function AreasOfImprovement({ currentIndex }: { currentIndex: number }) {
           {isEditing ?'Save' : 'Edit'}
         </Button>
       </div>
-      <div className="h-[40px] overflow-y-auto">
-        {isEditing ? (
-          <textarea
-            defaultValue={currentArea.description}
-            className="w-full text-sm text-gray-600 bg-transparent border rounded-md p-2 focus:outline-none focus:border-purple-800"
-            onBlur={(e) => handleSave(currentArea.area, e.target.value)}
-          />
-        ) : (
-          <p className="text-sm text-gray-600 pr-2">{currentArea.description}</p>
-        )}
-      </div>
+      <div className="h-[40px]">
+  {isEditing ? (
+    <textarea
+      defaultValue={currentArea.description}
+      className="w-full h-[40px] text-sm text-gray-600 bg-transparent border rounded-md p-2 focus:outline-none focus:border-purple-800 overflow-y-auto"
+      onBlur={(e) => handleSave(currentArea.area, e.target.value)}
+    />
+  ) : (
+    <p className="text-sm text-gray-600 pr-2 max-h-[40px] overflow-y-auto">{currentArea.description}</p>
+  )}
+</div>
     </div>
   );
 }
