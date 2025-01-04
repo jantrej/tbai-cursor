@@ -379,7 +379,7 @@ const isDateInRange = (dateStr: string) => {
               <thead className="sticky top-0 z-10">
               <tr className="bg-[#f8b922]">
   <th className="w-[8%] px-1 py-2">
-    <div className="flex justify-start items-center text-sm font-medium text-white pl-1">
+    <div className="flex justify-center items-center text-sm font-medium text-white pl-1">
       Date
     </div>
   </th>
