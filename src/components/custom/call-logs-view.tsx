@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect, useMemo } from "react"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { PowerMomentWidget } from "@/components/custom/power-moment-widget"
 import { Button } from "@/components/ui/button"
-import { Card, CardHeader, CardTitle, CardContent } from "./card"
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Play, Pause, Pencil, BarChart2, Check, X, ArrowLeft, ChevronLeft, ChevronRight, Zap } from 'lucide-react'
 import { formatDateShort } from '@/utils/formatters'
 import {
@@ -1077,7 +1077,6 @@ export function TranscriptView({ messages, className, agentName }: TranscriptVie
     </div>
   );
 }
-
 <style jsx>{`
   @keyframes pulse {
     0% {
