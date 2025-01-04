@@ -251,15 +251,15 @@ export default function SetCallTargetsModal2() {
     <div className="bg-[#f2f3f8] p-3">
       <div className="w-[100%] h-[100%] bg-white flex flex-col rounded-[20px] overflow-hidden p-5 relative">
         <div className="w-full rounded-[20px] p-5">
-        <div className="flex items-start space-x-2 -mt-1">
-          <div className="flex-shrink-0 mt-[2px]">
-            <Image
-              src="https://res.cloudinary.com/drkudvyog/image/upload/v1733749804/Target_icon_ghep9p.png"
-              alt="Target icon"
-              width={24}
-              height={24}
-            />
-          </div>
+          <div className="flex items-start space-x-2 -mt-1">
+            <div className="flex-shrink-0 mt-[2px]">
+              <Image
+                src="https://res.cloudinary.com/drkudvyog/image/upload/v1733749804/Target_icon_ghep9p.png"
+                alt="Target icon"
+                width={24}
+                height={24}
+              />
+            </div>
           <div className="flex-1">
             <h2 className="text-[18px] md:text-[16px] sm:text-[14px] font-extrabold font-montserrat leading-tight text-[#5b06be] mb-1">
               Set Performance Goals for Your Team to Unlock Next Avatar
