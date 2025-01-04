@@ -477,8 +477,8 @@ function ActivityView({ data }: ActivityViewProps) {
           <table className="w-full table-fixed">
             <thead className="sticky top-0 z-10">
             <tr className="bg-[#f8b922]">
-  <th className="w-[15%] px-1 py-4 text-left pl-4 text-sm font-medium text-white">Users</th>
-  <th className="w-[15%] px-1 py-4 text-left text-sm font-medium text-white">Overall Performance</th>
+  <th className="w-[12%] pr-0 py-4 text-left pl-2 text-sm font-medium text-white">Users</th>
+  <th className="w-[12%] px-0 py-4 text-left text-sm font-medium text-white -ml-4">Overall Performance</th>
   <th className="w-[8%] px-1 py-4 text-center text-sm font-medium text-white">Today</th>
   <th className="w-[8%] px-1 py-4 text-center text-sm font-medium text-white">This Week</th>
   <th className="w-[8%] px-1 py-4 text-center text-sm font-medium text-white">This Month</th>
@@ -489,7 +489,7 @@ function ActivityView({ data }: ActivityViewProps) {
     <div>Consistency</div>
     <div>This Month</div>
   </th>
-  <th className="w-[12%] px-1 py-4 text-center text-sm font-medium text-white">Notes</th>
+  <th className="w-[10%] px-1 py-4 text-center text-sm font-medium text-white">Notes</th>
 </tr>
             </thead>
           </table>
