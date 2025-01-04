@@ -388,78 +388,33 @@ const isDateInRange = (dateStr: string) => {
       User
     </div>
   </th>
-  <th className="w-[20%] px-2 py-4 text-center text-sm font-medium text-white">
-    Avatar
-  </th>
-  <th className="w-[20%] px-2 py-4 text-center">
-    <span className="text-sm font-medium text-white">
+  {/* ... other headers ... */}
+  <th className="w-[20%] px-2 py-4">
+    <div className="flex items-center justify-center text-sm font-medium text-white">
       Call Performance
-    </span>
-  </th>
-  <th className="w-[30%] px-2 py-4 text-center text-sm font-medium text-white">
-    Call Recording
+    </div>
   </th>
 </tr>
-              </thead>
-            </table>
-          
-            <div className="h-[340px] overflow-y-auto overflow-x-hidden [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-[#F8F0FF] [&::-webkit-scrollbar-thumb]:bg-[#5b06be] [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-[#7016e0]">
-              <table className="w-full">
-                <tbody>
-                  {filteredAndSortedData && filteredAndSortedData.length > 0 ? (
-                    filteredAndSortedData.map((log, index) => (
-                    <tr 
-                      key={index} 
-                      className="border-b border-[#f3f4f6] hover:bg-gray-50 transition-colors duration-150"
-                    >
-<td className="px-2 py-3">
-  <div className="flex justify-start items-center pl-2">
-    <span className="text-black text-xs whitespace-nowrap">
-      {formatDateShort(log.date)}
-    </span>
-  </div>
-</td>
 
+{/* User Column */}
 <td className="px-2 py-3">
-  <div className="flex items-center gap-3 ml-2">
+  <div className="flex items-center justify-start gap-3">
     <Avatar className="h-8 w-8 border-2 border-[#5b06be] flex-shrink-0">
       <AvatarImage 
-        src="https://res.cloudinary.com/drkudvyog/image/upload/v1734565916/Profile_photo_duha_s_bilym_pozadim_cl4ukr.png"
+        src="..."
         alt={`${log.name}'s profile`} 
       />
     </Avatar>
     <span className="font-medium text-black text-sm whitespace-nowrap">{log.name}</span>
   </div>
 </td>
-                      
-                      {/* Agent Column */}
-                      <td className="px-4 py-3">
-                        <div className="flex items-center gap-4 justify-center">
-                          <div className="flex items-center gap-2">
-                            <Avatar className="h-8 w-8 border-2 border-[#5b06be]">
-                              <AvatarImage 
-                                src={log.callerImage}
-                                alt="Agent profile" 
-                              />
-                            </Avatar>
-                            <span className="font-medium text-black text-sm">Agent</span>
-                          </div>
-                          <div className="flex items-center gap-2">
-                            <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs whitespace-nowrap">
-                              Creative Finance
-                            </span>
-                            <span className="px-2 py-1 bg-orange-100 text-orange-700 rounded-full text-xs whitespace-nowrap">
-                              Intermediate
-                            </span>
-                          </div>
-                        </div>
-                      </td>
-            
-                      {/* Performance Column */}
-                      <td className="px-4 py-3 text-center">
-                        <Dialog>
-                          <DialogTrigger asChild>
-                              <Button 
+
+{/* Performance Column */}
+<td className="px-4 py-3">
+  <div className="flex items-center justify-center">
+    <Dialog>
+      <DialogTrigger asChild>
+        <Button
                                 variant="ghost" 
                                 size="sm"
                                 className="rounded-full bg-[#5b06be] text-white hover:bg-[#7016e0] hover:text-white transition-all px-3 py-1 text-xs h-7"
