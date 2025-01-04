@@ -260,10 +260,10 @@ export default function SetCallTargetsModal2() {
             />
           </div>
           <div className="flex-1">
-            <h2 className="text-[18px] md:text-[16px] sm:text-[14px] font-extrabold font-montserrat leading-tight text-[#5b06be] mb-1">
+            <h2 className="text-[20px] md:text-[16px] sm:text-[14px] font-bold font-montserrat leading-tight text-[#5b06be] mb-1">
               Set Performance Goals for Your Team to Unlock Next Avatar
             </h2>
-            <p className="text-xs sm:text-sm font-montserrat font-semibold text-[#000000] leading-snug">
+            <p className="text-[#000000] text-xs sm:text-sm font-montserrat font-semibold leading-snug">
               Help your team progress by setting minimum performance requirements for their training sessions.
             </p>
           </div>
