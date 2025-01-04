@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect, useMemo } from "react"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { PowerMomentWidget } from "@/components/custom/power-moment-widget"
 import { Button } from "@/components/ui/button"
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card.tsx"
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
 import { Play, Pause, Pencil, BarChart2, Check, X, ArrowLeft, ChevronLeft, ChevronRight, Zap } from 'lucide-react'
 import { formatDateShort } from '@/utils/formatters'
 import {
@@ -277,8 +277,9 @@ const isDateInRange = (dateStr: string) => {
     )
   }
 
-  return (
-    <Card className="w-full bg-white overflow-hidden">
+  try {
+    return (
+      <Card className="w-full bg-white overflow-hidden">
         <CardHeader className="p-4 border-b flex flex-row items-center justify-between">
           <CardTitle className="text-2xl font-bold flex items-center gap-2 text-black flex-1">
             <Image
@@ -377,65 +378,88 @@ const isDateInRange = (dateStr: string) => {
             <table className="w-full table-fixed">
               <thead className="sticky top-0 z-10">
               <tr className="bg-[#f8b922]">
-                <th className="w-[10%] px-2 py-4">
-                  <div className="flex justify-start items-center text-sm font-medium text-white pl-2">
-                    Date
-                  </div>
-                </th>
-                <th className="w-[20%] px-2 py-4">
-                  <div className="flex items-center justify-center text-sm font-medium text-white">
-                    User
-                  </div>
-                </th>
-                <th className="w-[20%] px-2 py-4">
-                  <div className="flex items-center justify-center text-sm font-medium text-white">
-                    Call Performance
-                  </div>
-                </th>
-              </tr>
-            </thead>
-            <tbody>
-            {filteredAndSortedData.map((log) => (
-  <tr key={log.name}>
-    <td className="px-2 py-3">{log.date}</td>
-    <td className="px-2 py-3">
-      <div className="flex items-center justify-start gap-3">
-        <Avatar className="h-8 w-8 border-2 border-[#5b06be] flex-shrink-0">
-          <AvatarImage 
-            src={log.callerImage}
-            alt={`${log.name}'s profile`} 
-          />
-        </Avatar>
-        <span className="font-medium text-black text-sm whitespace-nowrap">{log.name}</span>
-      </div>
-    </td>
-    <td className="px-4 py-3">
-      <div className="flex items-center justify-center">
-        {/* Your dialog component here */}
-      </div>
-    </td>
-  </tr>
-))}
-  <td className="px-2 py-3">{log.date}</td>
-  <td className="px-2 py-3">
-    <div className="flex items-center justify-start gap-3">
-      <Avatar className="h-8 w-8 border-2 border-[#5b06be] flex-shrink-0">
-        <AvatarImage 
-          src={log.callerImage}
-          alt={`${log.name}'s profile`} 
-        />
-      </Avatar>
-      <span className="font-medium text-black text-sm whitespace-nowrap">{log.name}</span>
+  <th className="w-[10%] px-2 py-4">
+    <div className="flex justify-start items-center text-sm font-medium text-white pl-2">
+      Date
     </div>
-  </td>
-  <td className="px-4 py-3">
-    {/* Performance Column content */}
-  </td>
+  </th>
+  <th className="w-[20%] px-2 py-4">
+    <div className="flex items-center justify-center text-sm font-medium text-white">
+      User
+    </div>
+  </th>
+  <th className="w-[20%] px-2 py-4 text-center text-sm font-medium text-white">
+    Avatar
+  </th>
+  <th className="w-[20%] px-2 py-4 text-center">
+    <span className="text-sm font-medium text-white">
+      Call Performance
+    </span>
+  </th>
+  <th className="w-[30%] px-2 py-4 text-center text-sm font-medium text-white">
+    Call Recording
+  </th>
 </tr>
-  <div className="flex items-center justify-center">
-    <Dialog>
-      <DialogTrigger asChild>
-        <Button
+              </thead>
+            </table>
+          
+            <div className="h-[340px] overflow-y-auto overflow-x-hidden [&::-webkit-scrollbar]:w-2 [&::-webkit-scrollbar-track]:bg-[#F8F0FF] [&::-webkit-scrollbar-thumb]:bg-[#5b06be] [&::-webkit-scrollbar-thumb]:rounded-full hover:[&::-webkit-scrollbar-thumb]:bg-[#7016e0]">
+              <table className="w-full">
+                <tbody>
+                  {filteredAndSortedData && filteredAndSortedData.length > 0 ? (
+                    filteredAndSortedData.map((log, index) => (
+                    <tr 
+                      key={index} 
+                      className="border-b border-[#f3f4f6] hover:bg-gray-50 transition-colors duration-150"
+                    >
+<td className="px-2 py-3">
+  <div className="flex justify-start items-center pl-2">
+    <span className="text-black text-xs whitespace-nowrap">
+      {formatDateShort(log.date)}
+    </span>
+  </div>
+</td>
+
+<td className="px-2 py-3">
+  <div className="flex items-center gap-3 ml-2">
+    <Avatar className="h-8 w-8 border-2 border-[#5b06be] flex-shrink-0">
+      <AvatarImage 
+        src="https://res.cloudinary.com/drkudvyog/image/upload/v1734565916/Profile_photo_duha_s_bilym_pozadim_cl4ukr.png"
+        alt={`${log.name}'s profile`} 
+      />
+    </Avatar>
+    <span className="font-medium text-black text-sm whitespace-nowrap">{log.name}</span>
+  </div>
+</td>
+                      
+                      {/* Agent Column */}
+                      <td className="px-4 py-3">
+                        <div className="flex items-center gap-4 justify-center">
+                          <div className="flex items-center gap-2">
+                            <Avatar className="h-8 w-8 border-2 border-[#5b06be]">
+                              <AvatarImage 
+                                src={log.callerImage}
+                                alt="Agent profile" 
+                              />
+                            </Avatar>
+                            <span className="font-medium text-black text-sm">Agent</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs whitespace-nowrap">
+                              Creative Finance
+                            </span>
+                            <span className="px-2 py-1 bg-orange-100 text-orange-700 rounded-full text-xs whitespace-nowrap">
+                              Intermediate
+                            </span>
+                          </div>
+                        </div>
+                      </td>
+            
+                      {/* Performance Column */}
+                      <td className="px-4 py-3 text-center">
+                        <Dialog>
+                          <DialogTrigger asChild>
+                              <Button 
                                 variant="ghost" 
                                 size="sm"
                                 className="rounded-full bg-[#5b06be] text-white hover:bg-[#7016e0] hover:text-white transition-all px-3 py-1 text-xs h-7"
@@ -560,6 +584,7 @@ const isDateInRange = (dateStr: string) => {
               </tbody>
             </table>
           </div>
+        </div>
         </CardContent>
 <Dialog open={isCalendarOpen} onOpenChange={setIsCalendarOpen}>
   <DialogContent className="!p-0 !m-0 border bg-white overflow-hidden max-w-[600px]">
@@ -568,7 +593,10 @@ const isDateInRange = (dateStr: string) => {
 </Dialog>
       </Card>
     )
-
+  } catch (err) {
+    setError(err as Error);
+    return null;
+  }
 }
 
 function FeedbackDialog({ name, initialFeedback, onSaveFeedback }: { name: string, initialFeedback: string, onSaveFeedback: (feedback: string) => void }) {
@@ -1098,6 +1126,7 @@ export function TranscriptView({ messages, className, agentName }: TranscriptVie
     </div>
   );
 }
+
 <style jsx>{`
   @keyframes pulse {
     0% {
