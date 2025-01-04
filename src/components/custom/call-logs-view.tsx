@@ -378,30 +378,26 @@ const isDateInRange = (dateStr: string) => {
             <table className="w-full table-fixed">
               <thead className="sticky top-0 z-10">
               <tr className="bg-[#f8b922]">
-  <th className="w-[8%] sm:w-[10%] px-2 py-2">
-    <div className="flex justify-start items-center text-sm font-medium text-white">
+  <th className="w-[10%] px-2 py-4">
+    <div className="flex justify-start items-center text-sm font-medium text-white pl-2">
       Date
     </div>
   </th>
-  <th className="w-[15%] sm:w-[20%] px-2 py-2">
-    <div className="flex items-center text-sm font-medium text-white">
+  <th className="w-[20%] px-2 py-4">
+    <div className="flex items-center text-sm font-medium text-white pl-4">
       User
     </div>
   </th>
-  <th className="w-[35%] sm:w-[30%] px-2 py-2">
-    <div className="flex items-center text-sm font-medium text-white">
-      Avatar
-    </div>
+  <th className="w-[20%] px-2 py-4 text-center text-sm font-medium text-white">
+    Avatar
   </th>
-  <th className="w-[20%] px-2 py-2">
-    <div className="flex items-center justify-end text-sm font-medium text-white">
+  <th className="w-[20%] px-2 py-4">
+    <div className="flex items-center justify-end text-sm font-medium text-white pr-0">
       Call Performance
     </div>
   </th>
-  <th className="w-[22%] sm:w-[20%] px-2 py-2">
-    <div className="flex items-center justify-center text-sm font-medium text-white">
-      Call Recording
-    </div>
+  <th className="w-[30%] px-2 py-4 text-center text-sm font-medium text-white">
+    Call Recording
   </th>
 </tr>
               </thead>
@@ -416,42 +412,48 @@ const isDateInRange = (dateStr: string) => {
                       key={index} 
                       className="border-b border-[#f3f4f6] hover:bg-gray-50 transition-colors duration-150"
                     >
-<td className="px-2 py-2">
-  <div className="flex justify-start items-center">
+<td className="px-2 py-3">
+  <div className="flex justify-start items-center pl-2">
     <span className="text-black text-xs whitespace-nowrap">
       {formatDateShort(log.date)}
     </span>
   </div>
 </td>
 
-<td className="px-2 py-2">
-  <div className="flex items-center gap-2">
-    <Avatar className="h-7 w-7 border-2 border-[#5b06be] flex-shrink-0">
-      <AvatarImage src="..." alt={`${log.name}'s profile`} />
+<td className="px-2 py-3">
+  <div className="flex items-center gap-3 ml-2">
+    <Avatar className="h-8 w-8 border-2 border-[#5b06be] flex-shrink-0">
+      <AvatarImage 
+        src="https://res.cloudinary.com/drkudvyog/image/upload/v1734565916/Profile_photo_duha_s_bilym_pozadim_cl4ukr.png"
+        alt={`${log.name}'s profile`} 
+      />
     </Avatar>
-    <span className="font-medium text-black text-sm truncate">{log.name}</span>
+    <span className="font-medium text-black text-sm whitespace-nowrap">{log.name}</span>
   </div>
 </td>
-
-{/* Agent Column */}
-<td className="px-2 py-2">
-  <div className="flex items-center gap-2 justify-start">
-    <div className="flex items-center gap-2">
-      <Avatar className="h-7 w-7 border-2 border-[#5b06be]">
-        <AvatarImage src={log.callerImage} alt="Agent profile" />
-      </Avatar>
-      <span className="font-medium text-black text-sm">Agent</span>
-    </div>
-    <div className="flex items-center gap-1">
-      <span className="px-2 py-0.5 bg-purple-100 text-purple-700 rounded-full text-xs whitespace-nowrap">
-        Creative Finance
-      </span>
-      <span className="px-2 py-0.5 bg-orange-100 text-orange-700 rounded-full text-xs whitespace-nowrap">
-        Intermediate
-      </span>
-    </div>
-  </div>
-</td>
+                      
+                      {/* Agent Column */}
+                      <td className="px-4 py-3">
+                        <div className="flex items-center gap-4 justify-center">
+                          <div className="flex items-center gap-2">
+                            <Avatar className="h-8 w-8 border-2 border-[#5b06be]">
+                              <AvatarImage 
+                                src={log.callerImage}
+                                alt="Agent profile" 
+                              />
+                            </Avatar>
+                            <span className="font-medium text-black text-sm">Agent</span>
+                          </div>
+                          <div className="flex items-center gap-2">
+                            <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs whitespace-nowrap">
+                              Creative Finance
+                            </span>
+                            <span className="px-2 py-1 bg-orange-100 text-orange-700 rounded-full text-xs whitespace-nowrap">
+                              Intermediate
+                            </span>
+                          </div>
+                        </div>
+                      </td>
             
                       {/* Performance Column */}
                       <td className="px-4 py-3 text-center">
@@ -762,28 +764,28 @@ function AudioPlayer({ audioUrl }: { audioUrl: string }) {
   }
 
   return (
-    <div className="flex items-center gap-1 sm:gap-2">
+    <div className="flex items-center gap-2">
       <Button
         variant="ghost"
         size="sm"
         onClick={() => seekAudio(-10)}
-        className="text-xs text-black hover:text-[#5b06be] hidden sm:block"
+        className="text-xs text-black hover:text-[#5b06be]"
       >
         -10s
       </Button>
       <Button
-        variant="ghost"
-        size="icon"
-        onClick={togglePlayPause}
-        className="rounded-full bg-[#5b06be] text-white hover:bg-[#7016e0] w-7 h-7 p-0 flex-shrink-0"
-      >
-        {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
-      </Button>
+  variant="ghost"
+  size="icon"
+  onClick={togglePlayPause}
+  className="rounded-full bg-[#5b06be] text-white hover:bg-[#7016e0] hover:text-white transition-all shadow-md shadow-black/10 w-8 h-8 p-0 flex items-center justify-center aspect-square"
+>
+  {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+</Button>
       <div
-        ref={progressBarRef}
-        className="relative w-full max-w-[100px] sm:max-w-[150px] h-1.5 bg-gray-200 rounded-full cursor-pointer"
-        onClick={handleProgressBarClick}
-      >
+  ref={progressBarRef}
+  className="relative w-full max-w-[150px] h-1.5 bg-gray-200 roundedfull cursor-pointer"
+  onClick={handleProgressBarClick}
+>
         <div
           className="absolute h-full bg-[#5b06be] rounded-full"
           style={{ width: `${(currentTime / duration) * 100}%` }}
@@ -799,8 +801,7 @@ function AudioPlayer({ audioUrl }: { audioUrl: string }) {
       </Button>
       <div className="flex flex-col items-center gap-1">
         <span className="text-[10px] px-2 py-0.5 bg-[#5b06be] text-white rounded-full min-w-[3.5rem] h-5 flex items-center justify-center transition-all hover:bg-[#7016e0]">
-          {formatTime(currentTime)}
-        </span>
+          {formatTime(currentTime)}</span>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
@@ -831,7 +832,7 @@ function AudioPlayer({ audioUrl }: { audioUrl: string }) {
         Your browser does not support the audio element.
       </audio>
     </div>
-  );
+  )
 }
 
 function AreasOfImprovement({ currentIndex }: { currentIndex: number }) {
