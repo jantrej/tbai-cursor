@@ -248,8 +248,8 @@ export default function SetCallTargetsModal2() {
   }
 
   return (
-    <div className="w-full max-w-[600px] bg-white flex flex-col rounded-[20px] overflow-hidden p-5 relative">
-      <div className="w-full bg-white rounded-[20px] px-4 py-2 sm:py-3">
+    <div className="w-full max-w-[600px] bg-white flex flex-col rounded-[20px] overflow-hidden p-8 relative">
+      <div className="w-full bg-white rounded-[20px] p-5">
         <div className="flex items-start space-x-2 -mt-1">
           <div className="flex-shrink-0 mt-[2px]">
             <Image
@@ -276,7 +276,7 @@ export default function SetCallTargetsModal2() {
         transition={{ duration: 0.3 }}
       >
         <div className="flex flex-col">
-          <div className="py-2 sm:py-3 px-8">
+        <div className="p-5">
             {error && (
               <div className="mb-4 p-3 bg-red-50 text-red-600 rounded-lg text-sm">
                 {error}
