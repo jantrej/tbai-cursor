@@ -29,7 +29,7 @@ export default function Header({
   }
 
   return (
-    <div className="w-full bg-white rounded-[20px] px-4 py-2">
+    <div className="w-full bg-white rounded-[20px] p-5">
       <div className="flex items-start space-x-2">
         <div className="flex-shrink-0 mt-[2px]">
           <Image
