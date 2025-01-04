@@ -421,7 +421,7 @@ const isDateInRange = (dateStr: string) => {
 </td>
 
 <td className="px-1 py-2">
-<div className="flex items-center gap-2 ml-1">
+  <div className="flex items-center gap-1">
     <Avatar className="h-8 w-8 border-2 border-[#5b06be] flex-shrink-0">
       <AvatarImage 
         src="https://res.cloudinary.com/drkudvyog/image/upload/v1734565916/Profile_photo_duha_s_bilym_pozadim_cl4ukr.png"
@@ -433,8 +433,8 @@ const isDateInRange = (dateStr: string) => {
 </td>
                       
                       {/* Agent Column */}
-                      <td className="px-4 py-3">
-                      <div className="flex items-center gap-2 justify-center">
+                      <td className="px-2 py-2">
+                        <div className="flex items-center gap-1 justify-start">
                           <div className="flex items-center gap-2">
                             <Avatar className="h-8 w-8 border-2 border-[#5b06be]">
                               <AvatarImage 
@@ -456,7 +456,7 @@ const isDateInRange = (dateStr: string) => {
                       </td>
             
                       {/* Performance Column */}
-                      <td className="px-4 py-3 text-center">
+                      <td className="px-2 py-2 text-left">
   <Dialog onOpenChange={(open) => {
     if (open) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
