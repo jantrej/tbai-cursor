@@ -412,26 +412,27 @@ const isDateInRange = (dateStr: string) => {
                       key={index} 
                       className="border-b border-[#f3f4f6] hover:bg-gray-50 transition-colors duration-150"
                     >
-                      <td className="px-4 py-3">
-                        <div className="flex justify-start items-center pl-4">
-                          <span className="text-black text-xs whitespace-nowrap">
-                            {formatDateShort(log.date)}
-                          </span>
-                        </div>
-                      </td>
-                      
-                      {/* User Column */}
-                      <td className="px-4 py-3">
-                        <div className="flex items-center gap-3 ml-6">
-                          <Avatar className="h-8 w-8 border-2 border-[#5b06be] flex-shrink-0">
-                            <AvatarImage 
-                              src="https://res.cloudinary.com/drkudvyog/image/upload/v1734565916/Profile_photo_duha_s_bilym_pozadim_cl4ukr.png"
-                              alt={`${log.name}'s profile`} 
-                            />
-                          </Avatar>
-                          <span className="font-medium text-black text-sm whitespace-nowrap">{log.name}</span>
-                        </div>
-                      </td>
+// Updated date cell
+<td className="px-2 py-3">
+  <div className="flex justify-start items-center pl-2">
+    <span className="text-black text-xs whitespace-nowrap">
+      {formatDateShort(log.date)}
+    </span>
+  </div>
+</td>
+
+// Updated user cell
+<td className="px-2 py-3">
+  <div className="flex items-center gap-3 ml-2">
+    <Avatar className="h-8 w-8 border-2 border-[#5b06be] flex-shrink-0">
+      <AvatarImage 
+        src="https://res.cloudinary.com/drkudvyog/image/upload/v1734565916/Profile_photo_duha_s_bilym_pozadim_cl4ukr.png"
+        alt={`${log.name}'s profile`} 
+      />
+    </Avatar>
+    <span className="font-medium text-black text-sm whitespace-nowrap">{log.name}</span>
+  </div>
+</td>
                       
                       {/* Agent Column */}
                       <td className="px-4 py-3">
