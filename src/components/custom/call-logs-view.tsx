@@ -832,6 +832,7 @@ function AudioPlayer({ audioUrl }: { audioUrl: string }) {
       </audio>
     </div>
   );
+}
 
 function AreasOfImprovement({ currentIndex }: { currentIndex: number }) {
   const [areas, setAreas] = useState([
