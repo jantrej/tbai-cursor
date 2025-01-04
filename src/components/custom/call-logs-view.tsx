@@ -538,7 +538,6 @@ const isDateInRange = (dateStr: string) => {
               </tbody>
             </table>
           </div>
-        </div>
         </CardContent>
 <Dialog open={isCalendarOpen} onOpenChange={setIsCalendarOpen}>
   <DialogContent className="!p-0 !m-0 border bg-white overflow-hidden max-w-[600px]">
