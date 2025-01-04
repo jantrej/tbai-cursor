@@ -466,7 +466,7 @@ const isDateInRange = (dateStr: string) => {
       <Button 
         variant="ghost" 
         size="sm"
-        className="rounded-full bg-[#5b06be] text-white hover:bg-[#7016e0] hover:text-white transition-all px-2 py-1 text-xs h-7 -ml-4"
+        className="rounded-full bg-[#5b06be] text-white hover:bg-[#7016e0] hover:text-white transition-all px-2 py-1 text-xs h-7 -ml-16"
       >
         <span className="font-medium">{log.performance}/100</span>
         <span className="ml-1 font-medium">View Info</span>
