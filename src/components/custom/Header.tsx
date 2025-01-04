@@ -41,10 +41,10 @@ export default function Header({
           />
         </div>
         <div className="flex-1">
-          <h1 className="text-[18px] md:text-[16px] sm:text-[14px] font-extrabold font-montserrat leading-tight text-[#5b06be] mb-1">
+          <h2 className="text-[23px] md:text-[22px] sm:text-[14px] font-bold font-montserrat leading-tight text-[#5b06be] mb-1">
             {title.endsWith('.') ? title.slice(0, -1) : title}
-          </h1>
-          <p className="text-[14px] md:text-[14px] sm:text-[14px] font-bold font-montserrat text-gray-600 leading-snug">
+          </h2>
+          <p className="text-[#000000] text-xs sm:text-sm font-montserrat font-semibold">
             {subheadline}
           </p>
         </div>
