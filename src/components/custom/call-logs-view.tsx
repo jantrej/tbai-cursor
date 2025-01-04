@@ -397,11 +397,23 @@ const isDateInRange = (dateStr: string) => {
             <tbody>
               {filteredAndSortedData.map((log) => (
                 <tr key={log.name}>
-                  <td className="px-2 py-3">
-                    <div className="flex items-center justify-start gap-3">
-
-{/* Performance Column */}
-<td className="px-4 py-3">
+<tr key={log.name}>
+  <td className="px-2 py-3">{log.date}</td>
+  <td className="px-2 py-3">
+    <div className="flex items-center justify-start gap-3">
+      <Avatar className="h-8 w-8 border-2 border-[#5b06be] flex-shrink-0">
+        <AvatarImage 
+          src={log.callerImage}
+          alt={`${log.name}'s profile`} 
+        />
+      </Avatar>
+      <span className="font-medium text-black text-sm whitespace-nowrap">{log.name}</span>
+    </div>
+  </td>
+  <td className="px-4 py-3">
+    {/* Performance Column content */}
+  </td>
+</tr>
   <div className="flex items-center justify-center">
     <Dialog>
       <DialogTrigger asChild>
