@@ -392,7 +392,7 @@ const isDateInRange = (dateStr: string) => {
     Avatar
   </th>
   <th className="w-[20%] px-2 py-4">
-    <div className="flex items-center justify-end text-sm font-medium text-white pr-5">
+    <div className="flex items-center justify-end text-sm font-medium text-white pr-0">
       Call Performance
     </div>
   </th>
