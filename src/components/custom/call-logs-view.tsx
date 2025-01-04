@@ -379,7 +379,7 @@ const isDateInRange = (dateStr: string) => {
               <thead className="sticky top-0 z-10">
               <tr className="bg-[#f8b922]">
   <th className="w-[8%] px-1 py-2">
-    <div className="flex justify-center items-center text-sm font-medium text-white pl-1">
+    <div className="flex justify-start items-center text-sm font-medium text-white pl-1">
       Date
     </div>
   </th>
@@ -391,7 +391,7 @@ const isDateInRange = (dateStr: string) => {
   <th className="w-[15%] px-1 py-2 text-start text-sm font-medium text-white">
     Avatar
   </th>
-  <th className="w-[15%] px-1 py-2">
+  <th className="w-[10%] px-1 py-2">
     <div className="flex items-start justify-start text-sm font-medium text-white pr-0">
       Call Performance
     </div>
