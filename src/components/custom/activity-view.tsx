@@ -478,7 +478,10 @@ function ActivityView({ data }: ActivityViewProps) {
             <thead className="sticky top-0 z-10">
             <tr className="bg-[#f8b922]">
   <th className="w-[10%] px-1 py-4 text-left pl-2 text-sm font-medium text-white">Users</th>
-  <th className="w-[10%] px-1 py-4 text-left text-sm font-medium text-white">Overall Performance</th>
+  <th className="w-[10%] px-1 py-4 text-center text-sm font-medium text-white">
+    <div>Overall</div>
+    <div>Performance</div>
+  </th>
   <th className="w-[10%] px-1 py-4 text-center text-sm font-medium text-white">Today</th>
   <th className="w-[10%] px-1 py-4 text-center text-sm font-medium text-white">This Week</th>
   <th className="w-[10%] px-1 py-4 text-center text-sm font-medium text-white">This Month</th>
