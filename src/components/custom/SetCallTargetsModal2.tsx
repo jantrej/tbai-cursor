@@ -248,8 +248,8 @@ export default function SetCallTargetsModal2() {
   }
 
   return (
-    <div className="bg-[#f2f3f8] p-3">
-    <div className="w-full max-w-[600px] bg-white flex flex-col rounded-[20px] overflow-hidden px-3 sm:px-5 py-2 sm:py-3 relative">
+    <div className="bg-[#f2f3f8] p-3"> 
+      <div className="w-full max-w-[600px] bg-white flex flex-col rounded-[20px] overflow-hidden px-3 sm:px-5 py-2 sm:py-3 relative">
       <div className="w-full bg-white rounded-[20px] px-4 py-2 sm:py-3">
         <div className="flex items-start space-x-2 -mt-1">
           <div className="flex-shrink-0 mt-[2px]">
