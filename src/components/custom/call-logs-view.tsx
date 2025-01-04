@@ -277,9 +277,8 @@ const isDateInRange = (dateStr: string) => {
     )
   }
 
-  try {
-    return (
-      <Card className="w-full bg-white overflow-hidden">
+  return (
+    <Card className="w-full bg-white overflow-hidden">
         <CardHeader className="p-4 border-b flex flex-row items-center justify-between">
           <CardTitle className="text-2xl font-bold flex items-center gap-2 text-black flex-1">
             <Image
@@ -548,10 +547,7 @@ const isDateInRange = (dateStr: string) => {
 </Dialog>
       </Card>
     )
-  } catch (err) {
-    setError(err as Error);
-    return null;
-  }
+
 }
 
 function FeedbackDialog({ name, initialFeedback, onSaveFeedback }: { name: string, initialFeedback: string, onSaveFeedback: (feedback: string) => void }) {
