@@ -248,63 +248,64 @@ export default function SetCallTargetsModal2() {
   }
 
   return (
-    <div className="bg-[#f2f3f8] p-3"> 
+    <div className="bg-[#f2f3f8] p-3">
       <div className="w-full max-w-[600px] bg-white flex flex-col rounded-[20px] overflow-hidden px-3 sm:px-5 py-2 sm:py-3 relative">
-      <div className="w-full bg-white rounded-[20px] px-4 py-2 sm:py-3">
-        <div className="flex items-start space-x-2 -mt-1">
-          <div className="flex-shrink-0 mt-[2px]">
-            <Image
-              src="https://res.cloudinary.com/drkudvyog/image/upload/v1733749804/Target_icon_ghep9p.png"
-              alt="Target icon"
-              width={24}
-              height={24}
-            />
-          </div>
-          <div className="flex-1">
-            <h2 className="text-[18px] md:text-[16px] sm:text-[14px] font-extrabold font-montserrat leading-tight text-[#5b06be] mb-1">
-              Set Performance Goals for Your Team to Unlock Next Avatar
-            </h2>
-            <p className="text-[14px] md:text-[14px] sm:text-[14px] font-bold font-montserrat text-gray-600 leading-snug">
-              Help your team progress by setting minimum performance requirements for their training sessions.
-            </p>
+        <div className="w-full bg-white rounded-[20px] px-4 py-2 sm:py-3">
+          <div className="flex items-start space-x-2 -mt-1">
+            <div className="flex-shrink-0 mt-[2px]">
+              <Image
+                src="https://res.cloudinary.com/drkudvyog/image/upload/v1733749804/Target_icon_ghep9p.png"
+                alt="Target icon"
+                width={24}
+                height={24}
+              />
+            </div>
+            <div className="flex-1">
+              <h2 className="text-[18px] md:text-[16px] sm:text-[14px] font-extrabold font-montserrat leading-tight text-[#5b06be] mb-1">
+                Set Performance Goals for Your Team to Unlock Next Avatar
+              </h2>
+              <p className="text-[14px] md:text-[14px] sm:text-[14px] font-bold font-montserrat text-gray-600 leading-snug">
+                Help your team progress by setting minimum performance requirements for their training sessions.
+              </p>
+            </div>
           </div>
         </div>
+  
+        <motion.div
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ duration: 0.3 }}
+        >
+          <div className="flex flex-col">
+            <div className="py-2 sm:py-3 px-8">
+              {error && (
+                <div className="mb-4 p-3 bg-red-50 text-red-600 rounded-lg text-sm">
+                  {error}
+                </div>
+              )}
+              {renderTargetInputs()}
+            </div>
+            <div className="p-8 border-t flex justify-center mt-auto">
+              <Button
+                onClick={handleSubmit}
+                disabled={isLoading || saveSuccess}
+                className={`
+                  px-6 h-[45px] rounded-[20px] text-lg 
+                  font-semibold shadow-lg transition-all 
+                  duration-200 hover:scale-[1.02] 
+                  w-full max-w-xs border-2
+                  ${saveSuccess 
+                    ? 'bg-[#5b06be] text-white border-[#5b06be] hover:bg-[#4a05a0]' 
+                    : 'bg-white text-black hover:bg-gray-50'
+                  }
+                `}
+              >
+                {isLoading ? 'Saving...' : saveSuccess ? 'Success!' : 'Save Targets'}
+              </Button>
+            </div>
+          </div>
+        </motion.div>
       </div>
-
-      <motion.div
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.3 }}
-      >
-        <div className="flex flex-col">
-          <div className="py-2 sm:py-3 px-8">
-            {error && (
-              <div className="mb-4 p-3 bg-red-50 text-red-600 rounded-lg text-sm">
-                {error}
-              </div>
-            )}
-            {renderTargetInputs()}
-          </div>
-          <div className="p-8 border-t flex justify-center mt-auto">
-            <Button
-              onClick={handleSubmit}
-              disabled={isLoading || saveSuccess}
-              className={`
-                px-6 h-[45px] rounded-[20px] text-lg 
-                font-semibold shadow-lg transition-all 
-                duration-200 hover:scale-[1.02] 
-                w-full max-w-xs border-2
-                ${saveSuccess 
-                  ? 'bg-[#5b06be] text-white border-[#5b06be] hover:bg-[#4a05a0]' 
-                  : 'bg-white text-black hover:bg-gray-50'
-                }
-              `}
-            >
-              {isLoading ? 'Saving...' : saveSuccess ? 'Success!' : 'Save Targets'}
-            </Button>
-          </div>
-        </div>
-      </motion.div>
     </div>
-  )
+  );
 }
