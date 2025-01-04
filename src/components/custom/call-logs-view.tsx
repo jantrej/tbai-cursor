@@ -384,17 +384,17 @@ const isDateInRange = (dateStr: string) => {
     </div>
   </th>
   <th className="w-[20%] px-2 py-4">
-    <div className="flex items-center justify-center text-sm font-medium text-white">
+    <div className="flex items-center text-sm font-medium text-white pl-4">
       User
     </div>
   </th>
   <th className="w-[20%] px-2 py-4 text-center text-sm font-medium text-white">
     Avatar
   </th>
-  <th className="w-[20%] px-2 py-4 text-center">
-    <span className="text-sm font-medium text-white">
+  <th className="w-[20%] px-2 py-4">
+    <div className="flex items-center justify-end text-sm font-medium text-white pr-8">
       Call Performance
-    </span>
+    </div>
   </th>
   <th className="w-[30%] px-2 py-4 text-center text-sm font-medium text-white">
     Call Recording
