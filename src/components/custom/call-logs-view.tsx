@@ -378,25 +378,25 @@ const isDateInRange = (dateStr: string) => {
             <table className="w-full table-fixed">
               <thead className="sticky top-0 z-10">
               <tr className="bg-[#f8b922]">
-  <th className="w-[10%] px-2 py-4">
-    <div className="flex justify-start items-center text-sm font-medium text-white pl-2">
+  <th className="w-[8%] px-1 py-2">
+    <div className="flex justify-start items-center text-sm font-medium text-white pl-1">
       Date
     </div>
   </th>
-  <th className="w-[20%] px-2 py-4">
-    <div className="flex items-center text-sm font-medium text-white pl-4">
+  <th className="w-[15%] px-1 py-2">
+    <div className="flex items-center text-sm font-medium text-white pl-2">
       User
     </div>
   </th>
-  <th className="w-[20%] px-2 py-4 text-center text-sm font-medium text-white">
+  <th className="w-[15%] px-1 py-2 text-center text-sm font-medium text-white">
     Avatar
   </th>
-  <th className="w-[20%] px-2 py-4">
+  <th className="w-[15%] px-1 py-2">
     <div className="flex items-center justify-end text-sm font-medium text-white pr-0">
       Call Performance
     </div>
   </th>
-  <th className="w-[30%] px-2 py-4 text-center text-sm font-medium text-white">
+  <th className="w-[20%] px-1 py-2 text-center text-sm font-medium text-white">
     Call Recording
   </th>
 </tr>
@@ -412,7 +412,7 @@ const isDateInRange = (dateStr: string) => {
                       key={index} 
                       className="border-b border-[#f3f4f6] hover:bg-gray-50 transition-colors duration-150"
                     >
-<td className="px-2 py-3">
+<td className="px-1 py-2">
   <div className="flex justify-start items-center pl-2">
     <span className="text-black text-xs whitespace-nowrap">
       {formatDateShort(log.date)}
@@ -420,8 +420,8 @@ const isDateInRange = (dateStr: string) => {
   </div>
 </td>
 
-<td className="px-2 py-3">
-  <div className="flex items-center gap-3 ml-2">
+<td className="px-1 py-2">
+<div className="flex items-center gap-2 ml-1">
     <Avatar className="h-8 w-8 border-2 border-[#5b06be] flex-shrink-0">
       <AvatarImage 
         src="https://res.cloudinary.com/drkudvyog/image/upload/v1734565916/Profile_photo_duha_s_bilym_pozadim_cl4ukr.png"
@@ -434,7 +434,7 @@ const isDateInRange = (dateStr: string) => {
                       
                       {/* Agent Column */}
                       <td className="px-4 py-3">
-                        <div className="flex items-center gap-4 justify-center">
+                      <div className="flex items-center gap-2 justify-center">
                           <div className="flex items-center gap-2">
                             <Avatar className="h-8 w-8 border-2 border-[#5b06be]">
                               <AvatarImage 
@@ -444,7 +444,7 @@ const isDateInRange = (dateStr: string) => {
                             </Avatar>
                             <span className="font-medium text-black text-sm">Agent</span>
                           </div>
-                          <div className="flex items-center gap-2">
+                          <div className="flex items-center gap-1">
                             <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs whitespace-nowrap">
                               Creative Finance
                             </span>
