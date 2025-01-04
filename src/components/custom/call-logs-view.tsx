@@ -456,7 +456,7 @@ const isDateInRange = (dateStr: string) => {
                       </td>
             
                       {/* Performance Column */}
-                      <td className="px-0 py-2 text-left">
+                      <td className="px-0 py-0 text-left">
   <Dialog onOpenChange={(open) => {
     if (open) {
       window.scrollTo({ top: 0, behavior: 'smooth' });
