@@ -762,34 +762,33 @@ function AudioPlayer({ audioUrl }: { audioUrl: string }) {
   }
 
   return (
-<div className="flex items-center gap-1 sm:gap-2">
-  <Button
-    variant="ghost"
-    size="sm"
-    onClick={() => seekAudio(-10)}
-    className="text-xs text-black hover:text-[#5b06be] hidden sm:block"
-  >
-    -10s
-  </Button>
-  <Button
-    variant="ghost"
-    size="icon"
-    onClick={togglePlayPause}
-    className="rounded-full bg-[#5b06be] text-white hover:bg-[#7016e0] w-7 h-7 p-0 flex-shrink-0"
-  >
-    {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
-  </Button>
-  <div
-    ref={progressBarRef}
-    className="relative w-full max-w-[100px] sm:max-w-[150px] h-1.5 bg-gray-200 rounded-full cursor-pointer"
-    onClick={handleProgressBarClick}
-  >
-    <div
-      className="absolute h-full bg-[#5b06be] rounded-full"
-      style={{ width: `${(currentTime / duration) * 100}%` }}
-    />
-  </div>
-</div>
+    <div className="flex items-center gap-1 sm:gap-2">
+      <Button
+        variant="ghost"
+        size="sm"
+        onClick={() => seekAudio(-10)}
+        className="text-xs text-black hover:text-[#5b06be] hidden sm:block"
+      >
+        -10s
+      </Button>
+      <Button
+        variant="ghost"
+        size="icon"
+        onClick={togglePlayPause}
+        className="rounded-full bg-[#5b06be] text-white hover:bg-[#7016e0] w-7 h-7 p-0 flex-shrink-0"
+      >
+        {isPlaying ? <Pause className="h-4 w-4" /> : <Play className="h-4 w-4" />}
+      </Button>
+      <div
+        ref={progressBarRef}
+        className="relative w-full max-w-[100px] sm:max-w-[150px] h-1.5 bg-gray-200 rounded-full cursor-pointer"
+        onClick={handleProgressBarClick}
+      >
+        <div
+          className="absolute h-full bg-[#5b06be] rounded-full"
+          style={{ width: `${(currentTime / duration) * 100}%` }}
+        />
+      </div>
       <Button
         variant="ghost"
         size="sm"
@@ -800,7 +799,8 @@ function AudioPlayer({ audioUrl }: { audioUrl: string }) {
       </Button>
       <div className="flex flex-col items-center gap-1">
         <span className="text-[10px] px-2 py-0.5 bg-[#5b06be] text-white rounded-full min-w-[3.5rem] h-5 flex items-center justify-center transition-all hover:bg-[#7016e0]">
-          {formatTime(currentTime)}</span>
+          {formatTime(currentTime)}
+        </span>
         <DropdownMenu>
           <DropdownMenuTrigger asChild>
             <Button
@@ -831,8 +831,7 @@ function AudioPlayer({ audioUrl }: { audioUrl: string }) {
         Your browser does not support the audio element.
       </audio>
     </div>
-  )
-}
+  );
 
 function AreasOfImprovement({ currentIndex }: { currentIndex: number }) {
   const [areas, setAreas] = useState([
