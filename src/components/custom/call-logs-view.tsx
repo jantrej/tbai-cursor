@@ -4,7 +4,7 @@ import React, { useState, useRef, useEffect, useMemo } from "react"
 import { Avatar, AvatarImage, AvatarFallback } from "@/components/ui/avatar"
 import { PowerMomentWidget } from "@/components/custom/power-moment-widget"
 import { Button } from "@/components/ui/button"
-import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card"
+import { Card, CardHeader, CardTitle, CardContent } from "@/components/ui/card.tsx"
 import { Play, Pause, Pencil, BarChart2, Check, X, ArrowLeft, ChevronLeft, ChevronRight, Zap } from 'lucide-react'
 import { formatDateShort } from '@/utils/formatters'
 import {
@@ -395,9 +395,27 @@ const isDateInRange = (dateStr: string) => {
               </tr>
             </thead>
             <tbody>
-              {filteredAndSortedData.map((log) => (
-                <tr key={log.name}>
-<tr key={log.name}>
+            {filteredAndSortedData.map((log) => (
+  <tr key={log.name}>
+    <td className="px-2 py-3">{log.date}</td>
+    <td className="px-2 py-3">
+      <div className="flex items-center justify-start gap-3">
+        <Avatar className="h-8 w-8 border-2 border-[#5b06be] flex-shrink-0">
+          <AvatarImage 
+            src={log.callerImage}
+            alt={`${log.name}'s profile`} 
+          />
+        </Avatar>
+        <span className="font-medium text-black text-sm whitespace-nowrap">{log.name}</span>
+      </div>
+    </td>
+    <td className="px-4 py-3">
+      <div className="flex items-center justify-center">
+        {/* Your dialog component here */}
+      </div>
+    </td>
+  </tr>
+))}
   <td className="px-2 py-3">{log.date}</td>
   <td className="px-2 py-3">
     <div className="flex items-center justify-start gap-3">
