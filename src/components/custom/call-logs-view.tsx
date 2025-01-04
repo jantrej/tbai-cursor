@@ -590,8 +590,8 @@ const isDateInRange = (dateStr: string) => {
           </div>
         </div>
         </CardContent>
-<Dialog open={isCalendarOpen} onOpenChange={setIsCalendarOpen}>
-  <DialogContent className="!p-0 !m-0 border bg-white overflow-hidden max-w-[600px]">
+        <Dialog open={isCalendarOpen} onOpenChange={setIsCalendarOpen}>
+  <DialogContent className="!p-0 !m-0 border bg-white overflow-hidden max-w-[600px] fixed top-[37%] left-[50%] transform -translate-x-1/2 -translate-y-1/2] z-50">
     <Calendar onSelectRange={handleSelectDateRange} />
   </DialogContent>
 </Dialog>
