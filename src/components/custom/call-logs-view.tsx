@@ -388,11 +388,11 @@ const isDateInRange = (dateStr: string) => {
       User
     </div>
   </th>
-  <th className="w-[15%] px-1 py-2 text-center text-sm font-medium text-white">
+  <th className="w-[15%] px-1 py-2 text-start text-sm font-medium text-white">
     Avatar
   </th>
   <th className="w-[15%] px-1 py-2">
-    <div className="flex items-center justify-end text-sm font-medium text-white pr-0">
+    <div className="flex items-start justify-end text-sm font-medium text-white pr-0">
       Call Performance
     </div>
   </th>
@@ -444,7 +444,7 @@ const isDateInRange = (dateStr: string) => {
                             </Avatar>
                             <span className="font-medium text-black text-sm">Agent</span>
                           </div>
-                          <div className="flex items-center gap-1">
+                          <div className="flex items-center gap-2">
                             <span className="px-2 py-1 bg-purple-100 text-purple-700 rounded-full text-xs whitespace-nowrap">
                               Creative Finance
                             </span>
