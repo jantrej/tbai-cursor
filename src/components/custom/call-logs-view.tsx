@@ -377,36 +377,28 @@ const isDateInRange = (dateStr: string) => {
             <table className="w-full table-fixed">
               <thead className="sticky top-0 z-10">
               <tr className="bg-[#f8b922]">
-  <th className="w-[10%] px-2 py-4">
-    <div className="flex justify-start items-center text-sm font-medium text-white pl-2">
-      Date
-    </div>
-  </th>
-  <th className="w-[20%] px-2 py-4">
-    <div className="flex items-center justify-center text-sm font-medium text-white">
-      User
-    </div>
-  </th>
-  {/* ... other headers ... */}
-  <th className="w-[20%] px-2 py-4">
-    <div className="flex items-center justify-center text-sm font-medium text-white">
-      Call Performance
-    </div>
-  </th>
-</tr>
-
-{/* User Column */}
-<td className="px-2 py-3">
-  <div className="flex items-center justify-start gap-3">
-    <Avatar className="h-8 w-8 border-2 border-[#5b06be] flex-shrink-0">
-      <AvatarImage 
-        src="..."
-        alt={`${log.name}'s profile`} 
-      />
-    </Avatar>
-    <span className="font-medium text-black text-sm whitespace-nowrap">{log.name}</span>
-  </div>
-</td>
+                <th className="w-[10%] px-2 py-4">
+                  <div className="flex justify-start items-center text-sm font-medium text-white pl-2">
+                    Date
+                  </div>
+                </th>
+                <th className="w-[20%] px-2 py-4">
+                  <div className="flex items-center justify-center text-sm font-medium text-white">
+                    User
+                  </div>
+                </th>
+                <th className="w-[20%] px-2 py-4">
+                  <div className="flex items-center justify-center text-sm font-medium text-white">
+                    Call Performance
+                  </div>
+                </th>
+              </tr>
+            </thead>
+            <tbody>
+              {filteredAndSortedData.map((log) => (
+                <tr key={log.name}>
+                  <td className="px-2 py-3">
+                    <div className="flex items-center justify-start gap-3">
 
 {/* Performance Column */}
 <td className="px-4 py-3">
