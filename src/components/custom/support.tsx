@@ -473,14 +473,8 @@ const handleLike = async (topicId: number) => {
       </div>
 
       <Dialog open={!!selectedPost} onOpenChange={(isOpen) => !isOpen && setSelectedPost(null)}>
-       <DialogContent className="sm:max-w-[700px] h-[80vh] bg-white overflow-hidden">
-  <div className="absolute right-4 top-4">
-    <button className="text-gray-400 hover:text-[#5b06be] transition-colors"
-      onClick={() => setSelectedPost(null)}
-    >
-      <X className="w-5 h-5" />
-    </button>
-  </div>
+      <DialogContent className="sm:max-w-[700px] h-[80vh] bg-white overflow-hidden max-w-[95vw]">
+  
 <div className="space-y-1 flex flex-col h-full">
   <div className="flex-shrink-0">
   <div className="flex items-center gap-1"> {/* Changed from gap-3 to gap-2 */}
@@ -494,8 +488,10 @@ const handleLike = async (topicId: number) => {
     </div>
   </div>
 </div>
-  <h1 className="text-2xl font-semibold text-gray-900">{selectedPost?.title}</h1>
-            <p className="text-gray-600 text-lg">{selectedPost?.content || "No content available."}</p>
+<h1 className="text-2xl font-semibold text-gray-900 break-words">{selectedPost?.title}</h1>
+<p className="text-gray-600 text-lg break-all whitespace-pre-wrap overflow-hidden max-w-full">
+  {selectedPost?.content || "No content available."}
+</p>
 
             <div className="flex items-center gap-6 pt-4 border-t border-gray-200">
               <button 
@@ -509,11 +505,11 @@ const handleLike = async (topicId: number) => {
 
 <div className="pt-2">
   <div className="relative">
-    <textarea
+  <textarea
   value={newComment}
   onChange={(e) => setNewComment(e.target.value)}
   placeholder={replyTo.author ? `Reply to ${replyTo.author}...` : "Write your comment here..."}
-  className="w-full p-2 border border-gray-300 rounded-[15px] mb-1 h-14 focus:outline-none focus:border-[#5b06be] focus:border-2 whitespace-pre-wrap break-words"
+  className="w-full p-2 border border-gray-300 rounded-[15px] mb-1 h-14 focus:outline-none focus:border-[#5b06be] focus:border-2 whitespace-pre-wrap break-words text-white placeholder-gray-300 bg-gray-700"
   rows={3}
   maxLength={100}
 />
